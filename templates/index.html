@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Risk Assessment</title>
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="page">
+        <div class="card">
+
+            <!-- LEFT PANEL -->
+            <div class="left-panel">
+                <div>
+                    <div class="brand">
+                        <div class="brand-logo">₹</div>
+                        <div>
+                            <h2>TrustBank</h2>
+                            <p>Loan Risk Assessment Portal</p>
+                        </div>
+                    </div>
+
+                    <div class="hero">
+                        <h1>Loan Risk Prediction</h1>
+                        <p>
+                            Enter customer details and evaluate loan risk using Loan default prediction app.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL -->
+            <div class="right-panel">
+                <div class="form-header">
+                    <h3>Customer Details</h3>
+                </div>
+
+                <form action="/predict" method="POST">
+                    <div class="grid">
+
+                        <div class="field">
+                            <label>Investment Total</label>
+                            <input type="number" name="INVESTMENT_TOTAL" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Current Balance</label>
+                            <input type="number" name="ACCCURRENTBALANCE" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Marital Status</label>
+                            <select name="INF_MARITAL_STATUS" required>
+                                <option value="">Select</option>
+                                <option value="M">M</option>
+                                <option value="S">S</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Gender</label>
+                            <select name="INF_GENDER" required>
+                                <option value="">Select</option>
+                                <option value="M">M</option>
+                                <option value="F">F</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Install Size</label>
+                            <input type="number" name="INSTALL_SIZE" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Due Payment</label>
+                            <input type="number" name="DUE_PAYMENT" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Compensation Charged</label>
+                            <select name="COMPENSATION_CHARGED" required>
+                                <option value="">Select</option>
+                                <option value="Y">Y</option>
+                                <option value="N">N</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Repay Mode</label>
+                            <select name="REPAY_MODE" required>
+                                <option value="">Select</option>
+                                <option value="N">N</option>
+                                <option value="I">I</option>
+                            </select>
+                        </div>
+
+                        <div class="field full">
+                            <label>Client Type</label>
+                            <input type="text" name="CLIENT_TYPE" required>
+                        </div>
+
+                    </div>
+
+                    <button class="submit-btn" type="submit">Predict</button>
+                </form>
+
+                {% if prediction_text %}
+                    <div class="result">{{ prediction_text }}</div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
