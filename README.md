@@ -57,3 +57,18 @@ Build an end-to-end ML system to predict loan default and explain which factors 
 
 ## Model Output Preview
 
+![Output 1](output.png)
+![Output 2](output_1.png)
+
+## Key Results
+
+Three models were evaluated: Logistic Regression, Random Forest, and XGBoost. Logistic Regression failed to detect minority class instances due to class imbalance. XGBoost showed moderate improvement but still struggled with recall for risky customers. Random Forest achieved the best balance between precision and recall, especially improving detection of high-risk customers. Therefore, Random Forest was selected as the final model. DUE_PAYMENT has a great impact on the system.
+
+**Name:** Anamika Suresh
+
+**Title of ML project:**  Loan Default Risk Prediction & Credit Strategy
+
+**Organization :** Entri Elevate
+
+
+
