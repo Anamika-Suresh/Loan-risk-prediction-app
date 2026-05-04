@@ -1,4 +1,4 @@
-# **PROJECT :  Loan Default Risk Prediction & Credit Strategy Optimization**
+# **Loan Default Risk Prediction & Credit Strategy Optimization**
 
 ## Dataset Used :
 
